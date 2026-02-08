@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legion Shop</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel", serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Баннер */
+.banner {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 10px 40px rgba(255,140,0,0.2);
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.banner img:hover {
+  transform: scale(1.03);
+}
+
+/* Панель стекло */
+.panel {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 140, 0, 0.5);
+  border-radius: 20px;
+  padding: 40px;
+  width: 700px;
+  max-width: 95%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255,140,0,0.3);
+}
+
+/* Стили кнопок-мечей */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.sword-btn {
+  position: relative;
+  display: inline-block;
+  width: 500px;
+  padding: 15px 20px;
+  background: linear-gradient(90deg, #ffa500 0%, #ff4500 50%, #ffa500 100%);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255,140,0,0.5);
+  transition: all 0.3s;
+}
+
+/* Клинок меча */
+.sword-btn::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ddd 0%, #999 50%, #ddd 100%);
+  clip-path: polygon(50% 0%, 100% 0%, 50% 100%, 0% 100%);
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Рукоять меча */
+.sword-btn::after {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 100%;
+  background: #222;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.7);
+}
+
+/* Hover эффект меча */
+.sword-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 35px rgba(255,165,0,0.7);
+  background: linear-gradient(90deg, #ff4500 0%, #ffa500 50%, #ff4500 100%);
+}
+
+/* Текст на кнопке */
+.sword-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Фоновое свечение */
+.fire-glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,140,0,0.08), transparent 70%);
+  z-index: -1;
+  animation: glow 6s infinite;
+}
+
+@keyframes glow {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="fire-glow"></div>
+
+<!-- Баннер -->
+<div class="banner">
+  <img src="banner.jpg" alt="Рекламный баннер">
+</div>
+
+<!-- Панель стекло -->
+<div class="panel">
+  <div class="buttons">
+    <a class="sword-btn" href="https://t.me/pavel_w7" target="_blank"><span>Менеджер по работе<br>22:00 – 10:00 по МСК</span></a>
+    <a class="sword-btn" href="https://t.me/BydemRabotat" target="_blank"><span>Менеджер по работе<br>10:00 – 22:00 по МСК</span></a>
+    <a class="sword-btn" href="https://t.me/legalegion" target="_blank"><span>Оператор продаж<br>24/7</span></a>
+    <a class="sword-btn" href="https://t.me/Lega_ssup24" target="_blank"><span>Legion Support<br>24/7</span></a>
+    <a class="sword-btn" href="https://brn24.vip" target="_blank"><span>НАШ САЙТ<br>brn24.vip</span></a>
+  </div>
+</div>
+
+</body>
+</html>
